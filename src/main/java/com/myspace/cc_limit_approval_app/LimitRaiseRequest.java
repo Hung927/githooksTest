@@ -7,7 +7,7 @@ package com.myspace.cc_limit_approval_app;
 @org.kie.api.remote.Remotable
 public class LimitRaiseRequest implements java.io.Serializable {
 
-	static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1;
 
 	@org.kie.api.definition.type.Label("Customer ID")
 	private java.lang.Long customerId;
@@ -17,11 +17,14 @@ public class LimitRaiseRequest implements java.io.Serializable {
 	private boolean status;
 	@org.kie.api.definition.type.Label("Customer current score in the market")
 	private java.lang.Long customerScore;
-
+    @org.kie.api.definition.type.Label("Test message")
+    private java.lang.String message;
 	public LimitRaiseRequest() {
+	   // System.out.println(requestedValue);
 	}
 
 	public java.lang.Long getCustomerId() {
+	    System.out.print(customerId);
 		return this.customerId;
 	}
 
@@ -52,14 +55,20 @@ public class LimitRaiseRequest implements java.io.Serializable {
 	public void setCustomerScore(java.lang.Long customerScore) {
 		this.customerScore = customerScore;
 	}
-
+	
+    public java.lang.String getmessage() {
+		return this.message;
+	}
+	
 	public LimitRaiseRequest(java.lang.Long customerId,
 			java.math.BigDecimal requestedValue, boolean status,
-			java.lang.Long customerScore) {
+			java.lang.Long customerScore ,java.lang.String message) {
 		this.customerId = customerId;
 		this.requestedValue = requestedValue;
 		this.status = status;
 		this.customerScore = customerScore;
+		this.message = message;
+		System.out.print(customerId+"customer");
 	}
-
+    
 }
