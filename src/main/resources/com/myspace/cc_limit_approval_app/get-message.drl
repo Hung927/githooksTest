@@ -1,0 +1,11 @@
+package com.myspace.cc_limit_approval_app;
+
+import com.myspace.cc_limit_approval_app.LimitRaiseRequest;
+ 
+rule "Hello World"
+    dialect "mvel"
+    when
+        // m : LimitRaiseRequest( status == LimitRaiseRequest.status, myMessage : getmessage() )
+    then
+        System.out.println("test");
+end
